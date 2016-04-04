@@ -1,34 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.russell.utad.Home_Screen">
+    android:weightSum="1">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+    <Switch
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Filter Calls"
+        android:id="@+id/filterCalls"
+        android:layout_weight="0.13"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="110dp"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:checked="false"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:text="Enter Drive Mode"
+        android:id="@+id/driveMode"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.13"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textSize="50dp" />
 
-    </android.support.design.widget.AppBarLayout>
+    <Switch
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Filter Texts"
+        android:id="@+id/filterTexts"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginRight="25dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
-    <include layout="@layout/content_home__screen" />
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="Settings"
+        android:id="@+id/settings"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:textStyle="bold" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
