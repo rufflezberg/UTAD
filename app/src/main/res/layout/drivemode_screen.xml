@@ -3,4 +3,30 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:text="Exit Drive Mode"
+        android:id="@+id/exitDriveMode"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.13"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/thank_you"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="25dp" />
+
 </RelativeLayout>

@@ -16,5 +16,13 @@ public class DriveMode_Screen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drivemode_screen);
 
+        //navigation to home screen when save button is pressed
+        Button exitDriveModeButton=(Button)findViewById(R.id.exitDriveMode);
+        exitDriveModeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent toHomeScreen = new Intent(view.getContext(), Home_Screen.class);
+                startActivity(toHomeScreen);
+            }
+        });
     }
 }

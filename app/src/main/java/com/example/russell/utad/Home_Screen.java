@@ -13,6 +13,7 @@ public class Home_Screen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
+        //navigation to drive mode when drive mode button is pressed
         Button driveModeButton=(Button)findViewById(R.id.driveMode);
         driveModeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
