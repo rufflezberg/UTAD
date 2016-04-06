@@ -21,5 +21,21 @@ public class Home_Screen extends Activity {
                 startActivity(toDriveMode);
             }
         });
+
+        Button helpButton=(Button)findViewById(R.id.help);
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent toHelp = new Intent(view.getContext(), Help_Screen.class);
+                startActivity(toHelp);
+            }
+        });
+
+        Button settingsButton=(Button)findViewById(R.id.settings);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent toSettings = new Intent(view.getContext(), Settings_Screen.class);
+                startActivity(toSettings);
+            }
+        });
     }
 }
