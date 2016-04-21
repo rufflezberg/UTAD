@@ -19,6 +19,7 @@ public class Home_Screen extends Activity {
             public void onClick(View view) {
                 Intent toDriveMode = new Intent(view.getContext(), DriveMode_Screen.class);
                 startActivity(toDriveMode);
+                //i am comment
             }
         });
 
