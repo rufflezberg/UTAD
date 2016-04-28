@@ -1,4 +1,4 @@
-package com.example.russell.utad;
+package com.capstone.backrowcrew.utad;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,16 +9,16 @@ import android.widget.Button;
 /**
  * Created by Russell on 4/5/2016.
  */
-public class Help_Screen extends Activity {
+public class CallConfig_Screen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.help_screen);
+        setContentView(R.layout.call_config_screen);
 
-        //navigation to settings when back button is pressed
-        Button backButton=(Button)findViewById(R.id.toSettings);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        //navigation to settings when save button is pressed
+        Button saveButton=(Button)findViewById(R.id.save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent toSettings = new Intent(view.getContext(), Settings_Screen.class);
                 startActivity(toSettings);
