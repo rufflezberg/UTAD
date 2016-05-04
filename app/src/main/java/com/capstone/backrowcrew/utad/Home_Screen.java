@@ -38,5 +38,6 @@ public class Home_Screen extends Activity {
                 startActivity(toSettings);
             }
         });
+        //this is a comment 
     }
 }
