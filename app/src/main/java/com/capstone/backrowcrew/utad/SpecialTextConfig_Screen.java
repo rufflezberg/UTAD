@@ -2,9 +2,12 @@ package com.capstone.backrowcrew.utad;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Russell on 4/5/2016.
@@ -15,6 +18,12 @@ public class SpecialTextConfig_Screen extends Contacts_Screen {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.special_text_config_screen);
+
+        //david edit
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences.Editor editor = sharedPref.edit();
+        //david edit
+
 
         Button contactSet = (Button)findViewById(R.id.setContact);
         contactSet.setOnClickListener(new View.OnClickListener(){
@@ -28,11 +37,27 @@ public class SpecialTextConfig_Screen extends Contacts_Screen {
         Button saveButton=(Button)findViewById(R.id.save);
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                //david's edit within
                 Intent toSettings = new Intent(view.getContext(), Settings_Screen.class);
+                TextView messageView = (TextView)findViewById(R.id.textConfig);
+                String message = messageView.getText().toString();
                 //access listSelectedContacts for contacts that need custom text saved to them.
-                //if the size of listSelectedContacts is 0 make text that is in the box the default?
+                //if the message is empty string remove it from sharedpreferences (this will force it to use the default).
+                if(listSelectedContacts.size() != 0){
+                    for(int i = 0; i < listSelectedContacts.size(); i++){
+                        if(message.compareTo("") == 0){
+                            editor.remove(listSelectedContacts.get(i).getNumber());
+                        }
+                        else {
+                            String num = listSelectedContacts.get(i).getNumber();
+                            editor.putString(num, message);
+                        }
+                    }
+                }
+
                 listSelectedContacts.clear();
                 startActivity(toSettings);
+                //david's edit within
             }
         });
 

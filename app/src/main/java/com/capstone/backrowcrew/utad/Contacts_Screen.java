@@ -3,9 +3,11 @@ package com.capstone.backrowcrew.utad;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,6 +42,8 @@ public class Contacts_Screen extends Activity {
         final Button selectButton = (Button)findViewById(R.id.select);
         selectButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+
+
                 Intent toSpecialTextConfig = new Intent(view.getContext(), SpecialTextConfig_Screen.class);
                 listSelectedContacts = new ArrayList<Contact>();
                 if(contactStrings.size() == 0){
