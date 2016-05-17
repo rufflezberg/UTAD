@@ -97,6 +97,7 @@ public class Contacts_Screen extends Activity {
         adapter = new ArrayAdapter<String>(this, R.layout.contacts_text_view, stringContacts);
         list = (ListView)findViewById(R.id.contacts_list);
         list.setAdapter(adapter);
+        list.setBackgroundColor(Color.WHITE);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -106,7 +107,7 @@ public class Contacts_Screen extends Activity {
                 for(int i = 0; i < contactStrings.size(); i++){
                     if(s.compareTo(contactStrings.get(i)) == 0){
                         contactStrings.remove(i);
-                        view.setBackgroundColor(Color.parseColor("#ffffff"));
+                        view.setBackgroundColor(Color.WHITE);
                         isFound = true;
                         count_selected--;
                     }
