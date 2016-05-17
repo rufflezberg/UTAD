@@ -13,7 +13,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,7 +26,6 @@ import java.util.List;
  */
 public class Contacts_Screen extends Activity {
 
-    private ListView list;
     private List<Contact> contactsList = new ArrayList<Contact>();
     private String name;
     private String number;
@@ -77,7 +78,13 @@ public class Contacts_Screen extends Activity {
                 number = sb.toString();
             }
         }
+        LinearLayout list = (LinearLayout)findViewById(R.id.contacts_list);
         contactsList.add(new Contact(name, number));
+        TextView textView = new TextView(this);
+        textView.setText(contactsList.get(0).toString());
+        setClickListener(textView, textView.getText().toString(), selectButton);
+        list.addView(textView);
+        int count = 1;
         while(c.moveToNext()){
             name = c.getString(1);
             number = c.getString(2);
@@ -92,21 +99,24 @@ public class Contacts_Screen extends Activity {
                 }
             }
             contactsList.add(new Contact(name, number));
+            textView = new TextView(this);
+            textView.setText(contactsList.get(count).toString());
+            setClickListener(textView, textView.getText().toString(), selectButton);
+            list.addView(textView);
+            count++;
         }
         List<String> stringContacts = new ArrayList<String>();
         for(int i = 0; i < contactsList.size(); i++){
             stringContacts.add(contactsList.get(i).toString());
         }
 
-        adapter = new ArrayAdapter<String>(this, R.layout.contacts_text_view, stringContacts);
-        list = (ListView)findViewById(R.id.contacts_list);
-        list.setAdapter(adapter);
         list.setBackgroundColor(Color.WHITE);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    }
+
+    void setClickListener(TextView tView, final String s, final Button sButton){
+        tView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Object o = list.getItemAtPosition(position);
-                String s = o.toString();
+            public void onClick(View view) {
                 boolean isFound = false;
                 for(int i = 0; i < contactStrings.size(); i++){
                     if(s.compareTo(contactStrings.get(i)) == 0){
@@ -122,10 +132,10 @@ public class Contacts_Screen extends Activity {
                     count_selected++;
                 }
                 if(count_selected > 0){
-                    selectButton.setText("Select");
+                    sButton.setText("Select");
                 }
                 else if(count_selected == 0){
-                    selectButton.setText("Back");
+                    sButton.setText("Back");
                 }
                 if(count_selected < 0){
                     count_selected = 0;
