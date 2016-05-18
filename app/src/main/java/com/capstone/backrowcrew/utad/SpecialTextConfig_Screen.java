@@ -52,9 +52,9 @@ public class SpecialTextConfig_Screen extends Contacts_Screen {
                         }
                         else {
                             String num = listSelectedContacts.get(i).getNumber();
-                            Toast.makeText(getApplicationContext(),num + " : " + message, Toast.LENGTH_LONG).show();
                             editor.putString(num, message);
                             editor.apply();
+                            Toast.makeText(getBaseContext(), "Special Text saved for the contact(s) selected!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

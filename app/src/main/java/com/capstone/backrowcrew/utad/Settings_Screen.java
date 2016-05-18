@@ -16,15 +16,6 @@ public class Settings_Screen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_screen);
 
-        //navigation to call config when configure call button is pressed
-        Button callConfigButton=(Button)findViewById(R.id.callConfig);
-        callConfigButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent toCallConfig = new Intent(view.getContext(), CallConfig_Screen.class);
-                startActivity(toCallConfig);
-            }
-        });
-
         //navigation to text configure when configure text button is pressed
         Button textConfigButton=(Button)findViewById(R.id.textConfig);
         textConfigButton.setOnClickListener(new View.OnClickListener() {

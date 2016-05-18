@@ -18,7 +18,8 @@
         android:layout_marginLeft="25dp"
         android:checked="false"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:enabled="false"/>
 
     <Button
         android:layout_width="250dp"

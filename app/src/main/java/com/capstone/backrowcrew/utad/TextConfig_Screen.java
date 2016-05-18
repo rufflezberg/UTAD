@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Russell on 4/5/2016.
@@ -32,6 +33,7 @@ public class TextConfig_Screen extends Activity {
 
                 editor.putString("defaultMessage",message);
                 editor.apply();
+                Toast.makeText(getBaseContext(), "Default text message saved!", Toast.LENGTH_SHORT).show();
                 startActivity(toSettings);
             }
         });
