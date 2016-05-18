@@ -14,12 +14,13 @@ public class Home_Screen extends Activity {
 
     static boolean phoneIsOn = false;
     static boolean textIsOn = false;
+    static boolean driveModeIsOn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
-
+        driveModeIsOn = false;
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences.Editor editor = sharedPref.edit();
 

@@ -22,7 +22,7 @@ public class DriveMode_Screen extends Home_Screen {
 
         AudioManager audioManager= (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-
+        driveModeIsOn = true;
         if(phoneIsOn && textIsOn){
             Toast.makeText(getBaseContext(), "Calls and texts are being filtered, and notifications have been silenced!", Toast.LENGTH_LONG).show();
             //calls and texts filter code goes here
