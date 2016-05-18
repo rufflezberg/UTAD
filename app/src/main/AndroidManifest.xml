@@ -3,6 +3,11 @@
     package="com.capstone.backrowcrew.utad">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SEND_RESPOND_VIA_MESSAGE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.pernission.READ_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -27,6 +32,13 @@
         <activity android:name="com.capstone.backrowcrew.utad.SpecialTextConfig_Screen"></activity>
         <activity android:name="com.capstone.backrowcrew.utad.Settings_Screen"></activity>
         <activity android:name="com.capstone.backrowcrew.utad.TextConfig_Screen"></activity>
+
+        <receiver android:name=".SmsBroadcasterReceiver" android:exported="true" >
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

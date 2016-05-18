@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Russell on 4/5/2016.
@@ -47,10 +48,13 @@ public class SpecialTextConfig_Screen extends Contacts_Screen {
                     for(int i = 0; i < listSelectedContacts.size(); i++){
                         if(message.compareTo("") == 0){
                             editor.remove(listSelectedContacts.get(i).getNumber());
+                            editor.apply();
                         }
                         else {
                             String num = listSelectedContacts.get(i).getNumber();
+                            Toast.makeText(getApplicationContext(),num + " : " + message, Toast.LENGTH_LONG).show();
                             editor.putString(num, message);
+                            editor.apply();
                         }
                     }
                 }

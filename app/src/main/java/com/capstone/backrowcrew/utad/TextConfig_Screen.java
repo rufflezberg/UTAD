@@ -31,6 +31,7 @@ public class TextConfig_Screen extends Activity {
                 String message = messageView.getText().toString();
 
                 editor.putString("defaultMessage",message);
+                editor.apply();
                 startActivity(toSettings);
             }
         });

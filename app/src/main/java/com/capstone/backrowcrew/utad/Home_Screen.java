@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class Home_Screen extends Activity {
 
@@ -20,15 +21,20 @@ public class Home_Screen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putBoolean("phoneIsOn",false);
+        editor.putBoolean("textIsOn",false);
+        editor.apply();
 
         String checkString = sharedPref.getString("defaultMessage","no");
         if(checkString.compareTo("no") == 0){
             editor.putString("defaultMessage","I'm driving.");
+            editor.apply();
         }
 
-        Switch phoneSwitch = (Switch)findViewById(R.id.filterCalls);
+        final Switch phoneSwitch = (Switch)findViewById(R.id.filterCalls);
         if(phoneIsOn){
             phoneSwitch.toggle();
         }
@@ -37,9 +43,11 @@ public class Home_Screen extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked == true){
                     phoneIsOn = true;
+
                 }
                 else if(isChecked == false){
                     phoneIsOn = false;
+
                 }
             }
         });
@@ -53,9 +61,11 @@ public class Home_Screen extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked == true){
                     textIsOn = true;
+
                 }
                 else if(isChecked == false){
                     textIsOn = false;
+
                 }
             }
         });

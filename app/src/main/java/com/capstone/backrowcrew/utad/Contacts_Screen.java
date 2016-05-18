@@ -81,9 +81,11 @@ public class Contacts_Screen extends Activity {
             if(!Character.isDigit(number.charAt(i))){
                 StringBuilder sb = new StringBuilder(number);
                 sb.deleteCharAt(i);
+                i--;
                 number = sb.toString();
             }
         }
+        number.replaceAll("\\s+","");
 
         LinearLayout list = (LinearLayout)findViewById(R.id.contacts_list);
         //add contacts to the list of contacts
@@ -106,9 +108,11 @@ public class Contacts_Screen extends Activity {
                 if(!Character.isDigit(number.charAt(i))){
                     StringBuilder sb = new StringBuilder(number);
                     sb.deleteCharAt(i);
+                    i--;
                     number = sb.toString();
                 }
             }
+
             contactsList.add(new Contact(name, number));
             textView = new TextView(this);
             textView.setText(contactsList.get(count).toString());
