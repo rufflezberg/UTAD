@@ -7,8 +7,13 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 public class Home_Screen extends Activity {
+
+    static boolean phoneIsOn = false;
+    static boolean textIsOn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,38 @@ public class Home_Screen extends Activity {
         if(checkString.compareTo("no") == 0){
             editor.putString("defaultMessage","I'm driving.");
         }
+
+        Switch phoneSwitch = (Switch)findViewById(R.id.filterCalls);
+        if(phoneIsOn){
+            phoneSwitch.toggle();
+        }
+        phoneSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked == true){
+                    phoneIsOn = true;
+                }
+                else if(isChecked == false){
+                    phoneIsOn = false;
+                }
+            }
+        });
+
+        Switch textSwitch = (Switch)findViewById(R.id.filterTexts);
+        if(textIsOn){
+            textSwitch.toggle();
+        }
+        textSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked == true){
+                    textIsOn = true;
+                }
+                else if(isChecked == false){
+                    textIsOn = false;
+                }
+            }
+        });
 
         //navigation to drive mode when drive mode button is pressed
         Button driveModeButton=(Button)findViewById(R.id.driveMode);

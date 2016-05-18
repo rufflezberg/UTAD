@@ -22,6 +22,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/thank_you"
         android:id="@+id/textView"
+        android:layout_gravity="center_vertical"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
