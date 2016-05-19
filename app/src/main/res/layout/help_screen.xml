@@ -14,6 +14,22 @@
         android:layout_marginTop="10dp"
         android:textColor="#ffffff"/>
 
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Back"
+        android:id="@+id/toSettings"
+        android:layout_gravity="center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="#ffffff"/>
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,18 +46,6 @@
                 android:textSize="15dp"
                 android:id="@+id/helpMessage"
                 android:textColor="#ffffff"/>
-            <Button
-                android:layout_width="175dp"
-                android:layout_height="75dp"
-                android:text="Back"
-                android:id="@+id/toSettings"
-                android:layout_gravity="center_vertical"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="50dp"
-                android:layout_below="@+id/helpMessage"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:background="#ffffff"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

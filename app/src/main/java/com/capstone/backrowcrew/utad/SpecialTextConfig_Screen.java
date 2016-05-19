@@ -49,6 +49,7 @@ public class SpecialTextConfig_Screen extends Contacts_Screen {
                         if(message.compareTo("") == 0){
                             editor.remove(listSelectedContacts.get(i).getNumber());
                             editor.apply();
+                            Toast.makeText(getBaseContext(), "Special Text for the contact(s) selected has been set back to the default!", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             String num = listSelectedContacts.get(i).getNumber();
