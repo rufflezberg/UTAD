@@ -89,6 +89,8 @@ public class Contacts_Screen extends Activity {
 
         LinearLayout list = (LinearLayout)findViewById(R.id.contacts_list);
         //add contacts to the list of contacts
+        if(number.length() >= 10)
+            number = number.substring(number.length()-10, number.length());
         contactsList.add(new Contact(name, number));
         //create textViews for the list of textViews, set their text, and onclicklisteners, then add to the linearlayout
         TextView textView = new TextView(this);
@@ -112,7 +114,8 @@ public class Contacts_Screen extends Activity {
                     number = sb.toString();
                 }
             }
-
+            if(number.length() >= 10)
+                number = number.substring(number.length()-10, number.length());
             contactsList.add(new Contact(name, number));
             textView = new TextView(this);
             textView.setText(contactsList.get(count).toString());

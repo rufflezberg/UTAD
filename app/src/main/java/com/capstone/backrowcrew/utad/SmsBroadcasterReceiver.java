@@ -35,9 +35,14 @@ public class SmsBroadcasterReceiver extends BroadcastReceiver {
                     SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) sms[i]);
 
                     phone = smsMessage.getOriginatingAddress();
-                    message = sharedPref.getString(phone.toString(),defaultMessage);
+                   //message = sharedPref.getString(phone.toString(),defaultMessage);
                 }
-                sendSMS(phone,message,context);
+                if(phone.length() >= 10)
+                    phone = phone.substring(phone.length() - 10, phone.length());
+
+                message = sharedPref.getString(phone.toString(),defaultMessage);
+                if(phone.length() >= 10)
+                    sendSMS(phone,message,context);
 
             }
         }
