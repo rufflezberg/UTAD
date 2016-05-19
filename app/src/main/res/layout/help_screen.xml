@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:background="#000066">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,7 +11,8 @@
         android:id="@+id/helpText"
         android:textStyle="bold"
         android:textSize="50dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"/>
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -27,7 +28,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/help"
                 android:textSize="15dp"
-                android:id="@+id/helpMessage" />
+                android:id="@+id/helpMessage"
+                android:textColor="#ffffff"/>
             <Button
                 android:layout_width="175dp"
                 android:layout_height="75dp"
@@ -38,7 +40,8 @@
                 android:layout_marginBottom="50dp"
                 android:layout_below="@+id/helpMessage"
                 android:textStyle="bold"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:background="#ffffff"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

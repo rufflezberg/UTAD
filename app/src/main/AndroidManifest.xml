@@ -18,20 +18,21 @@
         <activity
             android:name="com.capstone.backrowcrew.utad.Home_Screen"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.capstone.backrowcrew.utad.CallConfig_Screen"></activity>
-        <activity android:name="com.capstone.backrowcrew.utad.Contacts_Screen"></activity>
-        <activity android:name="com.capstone.backrowcrew.utad.DriveMode_Screen"></activity>
-        <activity android:name="com.capstone.backrowcrew.utad.Help_Screen"></activity>
-        <activity android:name="com.capstone.backrowcrew.utad.SpecialTextConfig_Screen"></activity>
-        <activity android:name="com.capstone.backrowcrew.utad.Settings_Screen"></activity>
-        <activity android:name="com.capstone.backrowcrew.utad.TextConfig_Screen"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.CallConfig_Screen" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.Contacts_Screen" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.DriveMode_Screen" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.Help_Screen" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.SpecialTextConfig_Screen" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.Settings_Screen" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.capstone.backrowcrew.utad.TextConfig_Screen" android:screenOrientation="portrait"></activity>
 
         <receiver android:name=".SmsBroadcasterReceiver" android:exported="true" >
             <intent-filter android:priority="2147483647" >

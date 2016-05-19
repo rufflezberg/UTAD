@@ -28,35 +28,16 @@ public class DriveMode_Screen extends Home_Screen {
         AudioManager audioManager= (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 
-        if(phoneIsOn && textIsOn){
-            Toast.makeText(getBaseContext(), "Calls and texts are being filtered, and notifications have been silenced!", Toast.LENGTH_LONG).show();
+        if(textIsOn){
+            Toast.makeText(getBaseContext(), "Texts are being filtered, and notifications have been silenced!", Toast.LENGTH_LONG).show();
             editor.putBoolean("textIsOn",textIsOn);
-            editor.putBoolean("phoneIsOn",phoneIsOn);
             editor.apply();
-            //calls and texts filter code goes here
         }
-        else if(phoneIsOn && !textIsOn){
-            Toast.makeText(getBaseContext(), "Only calls are being filtered, and notifications have been silenced!", Toast.LENGTH_LONG).show();
+        else if(!textIsOn){
+            Toast.makeText(getBaseContext(), "Only notifications have been silenced!", Toast.LENGTH_LONG).show();
             editor.putBoolean("textIsOn",textIsOn);
-            editor.putBoolean("phoneIsOn",phoneIsOn);
             editor.apply();
-            //only calls filter code goes here
         }
-        else if(!phoneIsOn && textIsOn){
-            Toast.makeText(getBaseContext(), "Only texts are being filtered, and notifications have been silenced!", Toast.LENGTH_LONG).show();
-            editor.putBoolean("textIsOn",textIsOn);
-            editor.putBoolean("phoneIsOn",phoneIsOn);
-            editor.apply();
-            //only texts filter code goes here
-        }
-        else if(!phoneIsOn && !textIsOn){
-            Toast.makeText(getBaseContext(), "Neither calls nor texts are being filtered, but notifications have been silenced!", Toast.LENGTH_LONG).show();
-            editor.putBoolean("textIsOn",textIsOn);
-            editor.putBoolean("phoneIsOn",phoneIsOn);
-            editor.apply();
-            //only notification silence
-        }
-
 
         //navigation to home screen when save button is pressed
         Button exitDriveModeButton=(Button)findViewById(R.id.exitDriveMode);
@@ -66,7 +47,6 @@ public class DriveMode_Screen extends Home_Screen {
                 AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
                 audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
                 editor.putBoolean("textIsOn",false);
-                editor.putBoolean("phoneIsOn",false);
                 editor.apply();
                 startActivity(toHomeScreen);
             }

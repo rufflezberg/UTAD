@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="#000066">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,31 +11,22 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:enabled="false"
-        android:layout_marginTop="50dp"
-        android:textSize="50dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="75dp"
-        android:text="Configure Voicemail Message"
-        android:id="@+id/callConfig"
-        android:layout_below="@+id/settingsText"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:textSize="50dp"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textColor="#ffffff"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="75dp"
         android:text="Configure Default Text Message"
         android:id="@+id/textConfig"
-        android:layout_below="@+id/callConfig"
+        android:layout_below="@+id/settingsText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="30dp"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:background="#ffffff"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -44,9 +35,10 @@
         android:id="@+id/specialTextConfig"
         android:layout_below="@+id/textConfig"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:background="#ffffff"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -55,9 +47,10 @@
         android:id="@+id/help"
         android:layout_below="@+id/specialTextConfig"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:background="#ffffff"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -66,7 +59,8 @@
         android:id="@+id/toHome"
         android:layout_below="@+id/help"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:background="#ffffff"/>
 </RelativeLayout>

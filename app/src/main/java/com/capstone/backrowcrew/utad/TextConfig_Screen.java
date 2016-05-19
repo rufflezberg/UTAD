@@ -37,5 +37,14 @@ public class TextConfig_Screen extends Activity {
                 startActivity(toSettings);
             }
         });
+
+        //navigation to settings when back button is pressed
+        Button backButton=(Button)findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent toSettings = new Intent(view.getContext(), Settings_Screen.class);
+                startActivity(toSettings);
+            }
+        });
     }
 }

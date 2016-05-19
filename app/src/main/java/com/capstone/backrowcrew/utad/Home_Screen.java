@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class Home_Screen extends Activity {
 
-    static boolean phoneIsOn = false;
     static boolean textIsOn = false;
 
     @Override
@@ -33,24 +32,6 @@ public class Home_Screen extends Activity {
             editor.putString("defaultMessage","I'm driving.");
             editor.apply();
         }
-
-        final Switch phoneSwitch = (Switch)findViewById(R.id.filterCalls);
-        if(phoneIsOn){
-            phoneSwitch.toggle();
-        }
-        phoneSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked == true){
-                    phoneIsOn = true;
-
-                }
-                else if(isChecked == false){
-                    phoneIsOn = false;
-
-                }
-            }
-        });
 
         Switch textSwitch = (Switch)findViewById(R.id.filterTexts);
         if(textIsOn){
