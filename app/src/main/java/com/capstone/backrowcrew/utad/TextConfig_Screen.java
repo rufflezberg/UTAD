@@ -30,10 +30,11 @@ public class TextConfig_Screen extends Activity {
                 Intent toSettings = new Intent(view.getContext(), Settings_Screen.class);
                 TextView messageView = (TextView)findViewById(R.id.textConfig);
                 String message = messageView.getText().toString();
-
-                editor.putString("defaultMessage",message);
-                editor.apply();
-                Toast.makeText(getBaseContext(), "Default text message saved!", Toast.LENGTH_SHORT).show();
+                if(message.compareTo("") != 0) {
+                    editor.putString("defaultMessage", message);
+                    editor.apply();
+                    Toast.makeText(getBaseContext(), "Default message saved.", Toast.LENGTH_SHORT).show();
+                }
                 startActivity(toSettings);
             }
         });
